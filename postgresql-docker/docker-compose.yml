@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  grimdawn-postgresql:
+    build:
+        context: ./postgresql
+        dockerfile: Dockerfile
+    volumes:
+        - grimdawn-postgresql-data:/var/lib/postgresql/data/pgdata
+    container_name: grimdawn-postgresql
+    ports:
+        - "5432:5432"
+
+volumes:
+  grimdawn-postgresql-data:
